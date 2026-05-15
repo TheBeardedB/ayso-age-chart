@@ -1,0 +1,182 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.year-grid-header {
+  display: grid;
+  grid-template-columns: 120px 170px repeat(var(--season-count), minmax(110px, 1fr));
+  min-width: 900px;
+  background: #667eea;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+.header-cell {
+  padding: 1rem 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header-cell.season-col {
+  text-align: center;
+}
+
+.year-cards {
+  min-width: 900px;
+  background: #fff;
+  border-left: 1px solid #d9deef;
+  border-right: 1px solid #d9deef;
+  border-bottom: 1px solid #d9deef;
+  border-radius: 0 0 8px 8px;
+}
+
+.year-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  border-top: 1px solid #d9deef;
+}
+
+.year-card:first-child {
+  border-top: none;
+}
+
+.year-cell {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  background: #f7f9ff;
+  border-right: 1px solid #d9deef;
+}
+
+.year-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.year-row {
+  display: grid;
+  grid-template-columns: 170px repeat(var(--season-count), minmax(110px, 1fr));
+}
+
+.year-row + .year-row {
+  border-top: 1px solid #e0e0e0;
+}
+
+.range-cell {
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #e0e0e0;
+}
+
+.range-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.range-badge.range-h1 {
+  background: #e6f0ff;
+  color: #1e5ac9;
+  border: 1px solid #b6ceff;
+}
+
+.range-badge.range-h2 {
+  background: #fff3e0;
+  color: #9a5800;
+  border: 1px solid #ffd2a1;
+}
+
+.division-cell {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  border-right: 1px solid #e0e0e0;
+}
+
+.year-row .division-cell:last-child {
+  border-right: none;
+}
+
+.selected-date-row {
+  outline: 2px solid #3f5ac7;
+  outline-offset: -2px;
+  position: relative;
+  z-index: 2;
+}
+
+.table-legend {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f2f4f8;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid #ddd;
+}
+
+.legend-color.august-indicator {
+  background: #ffd54f;
+  border-color: #f57c00;
+}
+
+.legend-note {
+  font-style: italic;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.filter-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  color: #1976d2;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.no-results-cell {
+  padding: 1rem;
+  text-align: center;
+  color: #5e6886;
+  background: #f8faff;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .header-cell,
+  .range-cell,
+  .division-cell,
+  .year-cell {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .range-badge {
+    font-size: 0.75rem;
+  }
+}
